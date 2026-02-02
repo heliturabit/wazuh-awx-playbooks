@@ -1,10 +1,11 @@
 ---
 - name: Fix Windows vulnerabilities detected by Wazuh
-  hosts: "{{ target_host }}"
+  hosts: all
   gather_facts: no
 
   tasks:
-    - name: Install Security and Critical Windows Updates
+
+    - name: Install Windows Security & Critical Updates
       win_updates:
         category_names:
           - SecurityUpdates
